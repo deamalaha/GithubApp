@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import id.ac.unhas.githubappsubmission2.activity.FollowersViewModel
-import id.ac.unhas.githubappsubmission2.activity.UserAdapter
+import id.ac.unhas.githubappsubmission2.viewmodel.FollowersViewModel
+import id.ac.unhas.githubappsubmission2.adapter.UserAdapter
 import id.ac.unhas.githubappsubmission2.data.User
 import id.ac.unhas.githubappsubmission2.databinding.FragmentFollowersBinding
 
@@ -56,7 +56,8 @@ class FollowersFragment : Fragment() {
 
         showLoading(true)
 
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel::class.java)
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            FollowersViewModel::class.java)
         viewModel.setListFollowers(username)
         viewModel.getListFollowers().observe(viewLifecycleOwner, Observer<ArrayList<User>> {
             if (it!= null) {

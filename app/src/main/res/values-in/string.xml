@@ -8,4 +8,8 @@
     <string name="option">Opsi</string>
     <string name="add_to_favorite">Add to Favorites</string>
     <string name="remove_from_favorite">Removed from Favorites</string>
+    <string name="reminder">Pengingat pada pukul 9.00 </string>
+    <string name="select_lang">Pilih Bahasa</string>
+    <string name="sel_language">Pilih Bahasa</string>
+    <string name="reminder_key">Pengingat</string>
 </resources>

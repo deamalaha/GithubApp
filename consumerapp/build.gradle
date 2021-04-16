@@ -69,7 +69,7 @@ dependencies {
 
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
-    
+
     // preferences
     implementation 'androidx.preference:preference:1.1.1'
 }

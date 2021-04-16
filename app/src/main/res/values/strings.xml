@@ -7,4 +7,10 @@
     <string name="option">Option</string>
     <string name="add_to_favorite">Add to Favorites</string>
     <string name="remove_from_favorite">Removed from Favorites</string>
+    <string name="reminder">Reminder at 9.00 AM</string>
+    <string name="select_lang">Select Language</string>
+    <string name="sel_language">select language</string>
+    <string name="reminder_key">reminder</string>
+    <string name="alarm_message">Sudah waktunya! Buka kembali appmu</string>
+
 </resources>

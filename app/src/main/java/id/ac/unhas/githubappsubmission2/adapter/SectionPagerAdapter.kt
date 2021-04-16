@@ -1,4 +1,4 @@
-package id.ac.unhas.githubappsubmission2.activity
+package id.ac.unhas.githubappsubmission2.adapter
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

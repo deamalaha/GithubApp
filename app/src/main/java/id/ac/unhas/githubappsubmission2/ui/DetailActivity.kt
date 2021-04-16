@@ -12,8 +12,8 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import id.ac.unhas.githubappsubmission2.R
-import id.ac.unhas.githubappsubmission2.activity.DetailViewModel
-import id.ac.unhas.githubappsubmission2.activity.SectionPagerAdapter
+import id.ac.unhas.githubappsubmission2.viewmodel.DetailViewModel
+import id.ac.unhas.githubappsubmission2.adapter.SectionPagerAdapter
 import id.ac.unhas.githubappsubmission2.data.DetailUserResponse
 import id.ac.unhas.githubappsubmission2.databinding.ActivityDetailBinding
 import kotlinx.coroutines.CoroutineScope

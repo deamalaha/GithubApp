@@ -1,4 +1,4 @@
-package id.ac.unhas.githubappsubmission2.activity
+package id.ac.unhas.githubappsubmission2.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

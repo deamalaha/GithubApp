@@ -1,4 +1,4 @@
-package id.ac.unhas.githubappsubmission2.activity
+package id.ac.unhas.githubappsubmission2.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

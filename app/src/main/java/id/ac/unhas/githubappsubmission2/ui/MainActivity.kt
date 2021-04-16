@@ -11,8 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ac.unhas.githubappsubmission2.R
-import id.ac.unhas.githubappsubmission2.activity.MainViewModel
-import id.ac.unhas.githubappsubmission2.activity.UserAdapter
+import id.ac.unhas.githubappsubmission2.viewmodel.MainViewModel
+import id.ac.unhas.githubappsubmission2.adapter.UserAdapter
 import id.ac.unhas.githubappsubmission2.data.User
 import id.ac.unhas.githubappsubmission2.databinding.ActivityMainBinding
 
@@ -79,6 +79,11 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.favorite_menu -> {
                 Intent(this, FavoriteActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
+            R.id.settings_menu -> {
+                Intent(this, SettingActivity::class.java).also {
                     startActivity(it)
                 }
             }

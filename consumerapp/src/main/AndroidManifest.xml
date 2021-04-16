@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="id.ac.unhas.githubappsubmission2">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    package="id.ac.unhas.consumerapp">
 
     <application
         android:allowBackup="true"
@@ -11,15 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubAppSubmission2">
-        <receiver
-            android:name=".alarm.AlarmReceiver"
-            android:enabled="true"
-            android:exported="true"/>
-
-        <activity android:name=".ui.SettingActivity" />
-        <activity android:name=".ui.FavoriteActivity" />
-        <activity android:name=".ui.DetailActivity" />
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
