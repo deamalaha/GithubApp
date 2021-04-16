@@ -52,16 +52,16 @@ class DetailViewModel(application: Application) : AndroidViewModel(application) 
         return user
     }
 
-    fun addToFavorite(username : String, id : Int, avatar_url : String) {
+    fun addToFavorite(username: String, id: Int, avatar_url: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val user = FavoriteUser(username, id, avatar_url)
             userDao?.addToFavorite(user)
         }
     }
 
-    suspend fun checkUser(id : Int) = userDao?.checkUser(id)
+    suspend fun checkUser(id: Int) = userDao?.checkUser(id)
 
-    fun removeFavorite(id : Int){
+    fun removeFavorite(id: Int) {
         CoroutineScope(Dispatchers.IO).launch {
             userDao?.removeFromFavorite(id)
         }

@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
         userAdapter = UserAdapter()
         userAdapter.notifyDataSetChanged()
         userAdapter.setOnItemClickCallback(object :
@@ -39,19 +39,19 @@ class MainActivity : AppCompatActivity() {
                     startActivity(it)
                 }
             }
-
         })
 
         mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            MainViewModel::class.java)
-        
-        binding.apply { 
+            MainViewModel::class.java
+        )
+
+        binding.apply {
             rvItem.layoutManager = LinearLayoutManager(this@MainActivity)
             rvItem.setHasFixedSize(true)
             rvItem.adapter = userAdapter
-            
+
             btnSearch.setOnClickListener { searchUser() }
-            
+
             searchQuery.setOnKeyListener { _, i, keyEvent ->
                 if (keyEvent.action == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER) {
                     searchUser()
@@ -62,12 +62,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainViewModel.getUser().observe(this, Observer<ArrayList<User>> {
-            if (it!=null) {
+            if (it != null) {
                 userAdapter.setList(it)
                 showLoading(false)
             }
         })
-        
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun showLoading(state : Boolean) {
+    private fun showLoading(state: Boolean) {
         if (state) {
             binding.progressBar.visibility = View.VISIBLE
         } else {
