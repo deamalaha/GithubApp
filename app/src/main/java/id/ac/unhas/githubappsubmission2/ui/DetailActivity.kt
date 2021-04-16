@@ -2,6 +2,7 @@ package id.ac.unhas.githubappsubmission2.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -62,32 +63,23 @@ class DetailActivity : AppCompatActivity() {
                 }
             }
         })
-
-        var _isChecked = false
+        
         CoroutineScope(Dispatchers.IO).launch {
             val count = detailViewModel.checkUser(id)
             withContext(Dispatchers.Main) {
-                if (count != null) {
-                    if (count > 0) {
-                        binding.toggleFavorite.isChecked = true
-                        _isChecked = true
-                    } else {
-                        binding.toggleFavorite.isChecked = false
-                        _isChecked = false
-                    }
-                }
+                binding.toggleFavorite.isChecked = count != null && count > 0
             }
         }
 
-        binding.toggleFavorite.setOnClickListener {
-            _isChecked != _isChecked
+        binding.toggleFavorite.setOnCheckedChangeListener { _, isChecked ->
             username?.let {
-                if (_isChecked) {
+                if (isChecked) {
                     avatarUrl?.let { detailViewModel.addToFavorite(username, id, avatarUrl) }
+                    Toast.makeText(this, getString(R.string.add_to_favorite), Toast.LENGTH_SHORT).show()
                 } else {
                     detailViewModel.removeFavorite(id)
+                    Toast.makeText(this, getString(R.string.remove_from_favorite), Toast.LENGTH_SHORT).show()
                 }
-                binding.toggleFavorite.isChecked = _isChecked
             }
         }
 
