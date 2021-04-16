@@ -4,4 +4,7 @@
     <string name="tab_text_1">Followers</string>
     <string name="tab_text_2">Following</string>
     <string name="profile_pictures">Profile Pictures</string>
+    <string name="option">Option</string>
+    <string name="add_to_favorite">Add to Favorites</string>
+    <string name="remove_from_favorite">Removed from Favorites</string>
 </resources>

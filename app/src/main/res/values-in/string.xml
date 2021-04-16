@@ -4,4 +4,8 @@
     <string name="search">Cari</string>
     <string name="tab_text_1">Pengikut</string>
     <string name="tab_text_2">Mengikuti</string>
+    <string name="profile_pictures">Foto Profil</string>
+    <string name="option">Opsi</string>
+    <string name="add_to_favorite">Add to Favorites</string>
+    <string name="remove_from_favorite">Removed from Favorites</string>
 </resources>
