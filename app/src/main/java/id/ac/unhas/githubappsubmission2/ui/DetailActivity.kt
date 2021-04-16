@@ -63,7 +63,7 @@ class DetailActivity : AppCompatActivity() {
                 }
             }
         })
-        
+
         CoroutineScope(Dispatchers.IO).launch {
             val count = detailViewModel.checkUser(id)
             withContext(Dispatchers.Main) {

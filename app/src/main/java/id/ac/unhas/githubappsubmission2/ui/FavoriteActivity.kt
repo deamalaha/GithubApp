@@ -15,20 +15,17 @@ import id.ac.unhas.githubappsubmission2.db.FavoriteUser
 class FavoriteActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFavoriteBinding
-    private lateinit var adapter: UserAdapter
-    private lateinit var viewModel: FavoriteViewModel
+    private lateinit var favoriteAdapter: UserAdapter
+    private lateinit var favoriteViewModel: FavoriteViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = UserAdapter()
-        adapter.notifyDataSetChanged()
-
-        viewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
-
-        adapter.setOnItemClickCallback(object :
+        favoriteAdapter = UserAdapter()
+        favoriteAdapter.notifyDataSetChanged()
+        favoriteAdapter.setOnItemClickCallback(object :
             UserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: User) {
                 Intent(this@FavoriteActivity, DetailActivity::class.java).also {
@@ -40,16 +37,18 @@ class FavoriteActivity : AppCompatActivity() {
             }
         })
 
+        favoriteViewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
+
         binding.apply {
             rvUser.setHasFixedSize(true)
             rvUser.layoutManager = LinearLayoutManager(this@FavoriteActivity)
-            rvUser.adapter = adapter
+            rvUser.adapter = favoriteAdapter
         }
 
-        viewModel.getFavoriteUser()?.observe(this, Observer<List<FavoriteUser>> {
-            if (it!=null) {
+        favoriteViewModel.getFavoriteUser()?.observe(this, Observer<List<FavoriteUser>> {
+            if (it != null) {
                 val list = mapList(it)
-                adapter.setList(list)
+                favoriteAdapter.setList(list)
             }
         })
     }
